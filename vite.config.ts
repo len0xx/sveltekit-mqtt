@@ -6,11 +6,9 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	optimizeDeps: {
         esbuildOptions: {
-            // Node.js global to browser globalThis
             define: {
                 global: 'globalThis'
             },
-            // Enable esbuild polyfill plugins
             plugins: [
                 NodeGlobalsPolyfillPlugin({
                     buffer: true
@@ -18,4 +16,4 @@ export default defineConfig({
             ]
         }
     }
-});
+})
